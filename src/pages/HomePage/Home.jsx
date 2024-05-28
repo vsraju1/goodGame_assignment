@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../../components/Card/Card";
 import Navbar from "../../components/Navbar/Navbar";
 
@@ -7,7 +7,7 @@ const Home = () => {
     fetchData();
   }, []);
   const [data, setData] = useState([]);
-  const [searchVal, setSearchVal] = useState("")
+  const [searchVal, setSearchVal] = useState("");
   const fetchData = async () => {
     try {
       const response = await fetch("https://api.sampleapis.com/beers/ale");
@@ -17,8 +17,8 @@ const Home = () => {
   };
   return (
     <div>
-      <Navbar searchVal={searchVal} setSearchVal={setSearchVal}/>
-      <Card allData={data} searchVal={searchVal}/>
+      <Navbar searchVal={searchVal} setSearchVal={setSearchVal} />
+      <Card allData={data} searchVal={searchVal} />
     </div>
   );
 };
